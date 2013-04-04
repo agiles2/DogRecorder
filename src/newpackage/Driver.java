@@ -5,7 +5,6 @@
 package newpackage;
 
 /**
- *
  * @author Alvin
  */
 public class Driver {

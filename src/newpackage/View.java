@@ -21,7 +21,9 @@ public class View extends JFrame implements ActionListener {
     private JMenuItem reset, exit, about;
     private boolean begin;
     PackSizeView p = new PackSizeView();
+
     public View() {
+        
         begin = false;
         menuBar = new JMenuBar();
         this.setJMenuBar(menuBar);
@@ -40,7 +42,7 @@ public class View extends JFrame implements ActionListener {
         help.add(about);
         this.setTitle("Dog Recorder");
         view1 = new DogInsertionView();
-         p = new PackSizeView();
+        p = new PackSizeView();
 
         exit.addActionListener(new ActionListener() {
             @Override
@@ -51,7 +53,14 @@ public class View extends JFrame implements ActionListener {
         reset.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+            }
+        });
+        about.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               HelpView help = new HelpView();
+               help.setVisible(true);
+               help.setTitle("HELP");
             }
         });
         add(view1);
@@ -63,6 +72,7 @@ public class View extends JFrame implements ActionListener {
     }
 
     public void start() {
+        setIconImage(new ImageIcon(getClass().getResource("/Icons/beagle.png")).getImage());
         setVisible(true);
 
     }
@@ -80,6 +90,6 @@ public class View extends JFrame implements ActionListener {
          * pack();
          * begin = false;
          * }*/
-        
+
     }
 }

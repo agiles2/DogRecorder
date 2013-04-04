@@ -24,7 +24,6 @@ public class DogInsertionView extends JPanel {
     private Boolean change;
     private LinkedList<String> dogsList;
     
-
     public DogInsertionView() {
         change = false;
         dogsList = new LinkedList<>();
