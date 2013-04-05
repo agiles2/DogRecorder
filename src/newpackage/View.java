@@ -74,7 +74,7 @@ public class View extends JFrame implements ActionListener {
     public void start() {
         setIconImage(new ImageIcon(getClass().getResource("/Icons/beagle.png")).getImage());
         setVisible(true);
-
+        setResizable(false);
     }
 
     @Override

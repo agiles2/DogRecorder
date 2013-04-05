@@ -19,7 +19,7 @@ public class HelpView extends JFrame {
 
     public HelpView() {
         info = new JTextArea();
-        info.setFont(new Font("cambria", Font.PLAIN, 18));
+        info.setFont(new Font("times new roman", Font.PLAIN, 18));
         info.setText("This program is designed to keep track of beagle compititions. At the top of every"
                 + " screen there is a \"file\" menu that can be used to reset or exit the program and a \"help\""
                 + "menu that provides information. The program first takes in the dog names, then the pack size should be"
