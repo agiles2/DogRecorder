@@ -15,7 +15,7 @@ public class Dog {
     private String name, color;
     private int number;
 
-    public Dog(String dogName, int colorNum, int packSize) throws Exception {
+    public Dog(String dogName, int colorNum) {
         name = dogName;
         number = (int) Math.random();
         switch (colorNum) {
@@ -41,7 +41,49 @@ public class Dog {
                 color = "";
                 break;
             default:
-                throw new Exception("NumOutOfColorBounds");
+                System.out.println("Invalid Num");
         }
+    }
+
+    /**
+     * @return the name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @param name the name to set
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * @return the color
+     */
+    public String getColor() {
+        return color;
+    }
+
+    /**
+     * @param color the color to set
+     */
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    /**
+     * @return the number
+     */
+    public int getNumber() {
+        return number;
+    }
+
+    /**
+     * @param number the number to set
+     */
+    public void setNumber(int number) {
+        this.number = number;
     }
 }

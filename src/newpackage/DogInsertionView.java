@@ -11,6 +11,8 @@ package newpackage;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.LinkedList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 
 public class DogInsertionView extends JPanel {
@@ -22,8 +24,8 @@ public class DogInsertionView extends JPanel {
     private String testText;
     private JFrame endView;
     private Boolean change;
-    private LinkedList<String> dogsList;
-    
+    private LinkedList<Dog> dogsList;
+
     public DogInsertionView() {
         change = false;
         dogsList = new LinkedList<>();
@@ -68,15 +70,14 @@ public class DogInsertionView extends JPanel {
         add.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                dogsList.add(input.getText());
-                testText ="";
-                for (int i=0; i< dogsList.size();i++)
-                {
-                    testText += dogsList.get(i) + "\n";
+                dogsList.add(new Dog(input.getText(), (int) Math.random() * 10));
+                testText = "";
+                for (int i = 0; i < dogsList.size(); i++) {
+                    testText += dogsList.get(i).getName() + "\n";
                 }
                 test.setText(testText);
                 input.setText("");
-                
+
             }
         });
         end.addActionListener(new ActionListener() {
@@ -106,7 +107,9 @@ public class DogInsertionView extends JPanel {
         test.setEditable(false);
         input.selectAll();
     }
-    public Boolean isChange(){
+
+    public Boolean isChange() {
         return change;
     }
+ 
 }

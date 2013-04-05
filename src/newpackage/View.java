@@ -53,6 +53,7 @@ public class View extends JFrame implements ActionListener {
         reset.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                begin = true;
             }
         });
         about.addActionListener(new ActionListener() {
@@ -77,6 +78,13 @@ public class View extends JFrame implements ActionListener {
         setResizable(false);
     }
 
+    public boolean getBegin(){
+        return begin;
+    }
+       public void close(){
+        setVisible(false);
+        this.dispose();
+    }
     @Override
     public void actionPerformed(ActionEvent e) {
         if (view1.isChange()) {
@@ -92,4 +100,5 @@ public class View extends JFrame implements ActionListener {
          * }*/
 
     }
+    
 }
